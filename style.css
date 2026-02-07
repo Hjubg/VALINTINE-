@@ -1,0 +1,48 @@
+:root{
+  --bg:#111;
+  --card:#1b1b2f;
+  --accent:#ff5c8a;
+  --muted:#cfcfe8;
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:system-ui,Segoe UI,Roboto,Helvetica,Arial;color:var(--muted);background:radial-gradient(circle at 20% 10%, #2b0b1e 0%, #0b0620 40%),var(--bg);}
+.scene{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
+.card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:28px;border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,0.6);width:360px;max-width:95%;text-align:center}
+.card h1{margin:0 0 16px;font-size:26px;color:var(--accent);text-shadow:0 2px 8px rgba(255,92,138,0.18)}
+.card h2{margin:0 0 12px;color:var(--accent)}
+.buttons{display:flex;gap:12px;justify-content:center;margin:18px 0}
+button{cursor:pointer;padding:12px 18px;border-radius:10px;border:0;background:linear-gradient(180deg,var(--accent),#d0446d);color:white;font-weight:600;transition:transform .18s ease,box-shadow .18s}
+button#no{background:transparent;color:var(--muted);border:2px solid rgba(255,255,255,0.06);min-width:72px}
+button:active{transform:scale(.98)}
+.hint{font-size:12px;color:#bfb9c9;margin-top:8px}
+.hidden{display:none}
+.romantic{margin:12px 0 6px}
+.lines p{margin:6px 0}
+.controls{margin-top:16px}
+.today{margin:10px 0;padding:10px;background:rgba(255,255,255,0.02);border-radius:8px;font-size:14px}
+.daycard{min-height:120px;padding:12px;border-radius:8px;background:linear-gradient(180deg, rgba(255,92,138,0.05), rgba(0,0,0,0.1));margin-top:12px}
+.small{font-size:12px;color:#9f93a8;margin-top:12px}
+
+/* No button animation helpers */
+.no-slip{position:relative;transition:transform .28s cubic-bezier(.2,.9,.3,1)}
+
+/* subtle floating hearts background */
+body::after{content:"";position:fixed;inset:0;pointer-events:none;background-image:radial-gradient(circle at 10% 20%, rgba(255,92,138,0.06) 0 2px, transparent 2px),radial-gradient(circle at 80% 70%, rgba(255,92,138,0.04) 0 3px, transparent 3px);mix-blend-mode:screen}
+
+@media (max-width:420px){.card{padding:18px}}
+
+/* Heart background animation */
+.hearts{position:fixed;inset:0;pointer-events:none;overflow:hidden}
+.heart{position:absolute;width:18px;height:18px;background:var(--accent);transform:rotate(45deg);left:50%;bottom:-40px;border-radius:2px;box-shadow:0 6px 18px rgba(255,92,138,0.08);opacity:0.9}
+.heart:before,.heart:after{content:"";position:absolute;width:18px;height:18px;background:inherit;border-radius:50%}
+.heart:before{top:-9px;left:0}
+.heart:after{left:9px;top:0}
+@keyframes floatUp{0%{transform:translateY(0) scale(1) rotate(45deg);opacity:1}100%{transform:translateY(-110vh) scale(.8) rotate(45deg);opacity:0}}
+.heart{animation:floatUp linear infinite}
+
+/* Slight heartbeat for the Yes button */
+button#yes.pulse{animation:beat .9s infinite}
+@keyframes beat{0%{transform:scale(1)}30%{transform:scale(1.08)}60%{transform:scale(0.98)}100%{transform:scale(1)}}
+
+
+

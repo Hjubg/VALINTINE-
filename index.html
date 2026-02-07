@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Will U be my Valentine?</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <div class="hearts" aria-hidden="true"></div>
+  <div class="scene">
+    <div class="card" id="landing">
+      <h1>Will U be my Valentine?</h1>
+      <div class="buttons">
+        <button id="yes">Yes 💖</button>
+        <button id="no">No 😅</button>
+      </div>
+    </div>
+
+    <div class="card hidden" id="romance">
+      <h2>Yay! 💘</h2>
+      <p class="romantic">You made my day. I wrote a few lines just for you:</p>
+      <div class="lines">
+        <p>Every thought of you feels like a spark,</p>
+        <p>Turning simple days into a glowing mark.</p>
+        <p>Will you walk this week of small surprises with me?</p>
+        <p>Your smile writes poems on the air,</p>
+        <p>In your eyes I find my favorite place,</p>
+        <p>Let's make ordinary moments feel like magic.</p>
+      </div>
+      <div class="controls">
+        <button id="openWeek">Open Valentine Week</button>
+      </div>
+    </div>
+
+    <div class="card hidden" id="week">
+      <h2>Valentine Week</h2>
+      <div id="todayInfo" class="today"></div>
+      <div id="dayCard" class="daycard"></div>
+      <div class="controls">
+        <button id="nextDay">Next</button>
+      </div>
+      <p class="small">Days unlock at local midnight. Refresh preserves progress.</p>
+    </div>
+  </div>
+</body>
+</html>
